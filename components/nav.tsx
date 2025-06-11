@@ -1,5 +1,3 @@
-import React from "react";
-
 function Nav() {
   return (
     <nav className="flex justify-between w-full bg-primary p-5">

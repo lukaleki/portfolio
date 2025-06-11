@@ -24,6 +24,10 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --primary: #04d361;
+    --secondary: #0fa3b1;
+    --accent: #347e97;
+    --highliter: #1e1e1e;
   }
 }
 
