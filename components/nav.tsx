@@ -1,6 +1,6 @@
 function Nav() {
   return (
-    <nav className="flex justify-between w-full bg-primary p-5">
+    <nav className="flex justify-between w-full bg-primary p-5 mb-5">
       <h1 className="text-xl">
         <a href="#">RTS-Roguelite</a>
       </h1>
