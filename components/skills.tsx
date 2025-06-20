@@ -11,7 +11,10 @@ const urls = [next, node, html, css, react, js];
 
 function Skills() {
   return (
-    <div className="max-h-2/3 bg-highliter w-full flex flex-col justify-between items-center">
+    <div
+      id="skills"
+      className="max-h-2/3 w-full flex flex-col justify-between items-center"
+    >
       <h1 className="text-4xl">My skills</h1>
       <div className="w-full flex justify-around items-center">
         <div className="relative w-[20vmin] aspect-[5/7] group">

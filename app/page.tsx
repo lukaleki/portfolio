@@ -1,3 +1,4 @@
+"use client";
 import About from "@/components/about-me";
 import Skills from "@/components/skills";
 

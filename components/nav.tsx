@@ -9,10 +9,10 @@ function Nav() {
           <a href="#">Home</a>
         </li>
         <li>
-          <a href="#">Game</a>
+          <a href="#skills">Skills</a>
         </li>
         <li>
-          <a href="#">About Us</a>
+          <a href="#about">About Me</a>
         </li>
         <li>
           <a href="#">Contact</a>
