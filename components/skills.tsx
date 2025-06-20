@@ -9,9 +9,9 @@ import node from "@/public/nodejs.png";
 
 const urls = [next, node, html, css, react, js];
 
-function Experience() {
+function Skills() {
   return (
-    <div className="bg-red-500 w-full flex flex-col justify-between items-center">
+    <div className="max-h-2/3 bg-highliter w-full flex flex-col justify-between items-center">
       <h1 className="text-4xl">My skills</h1>
       <div className="w-full flex justify-around items-center">
         <div className="relative w-[20vmin] aspect-[5/7] group">
@@ -31,18 +31,32 @@ function Experience() {
             </div>
           ))}
         </div>
-        <ul>
-          <li>JavaScript</li>
-          <li>React</li>
+        <ul className="text-xl grid grid-flow-col grid-rows-3 gap-7">
           <li>HTML</li>
           <li>CSS</li>
           <li>SCSS</li>
-          <li>Next</li>
+          <li>JavaScript</li>
+          <li>React</li>
           <li>React-Native</li>
+          <li>NextJS</li>
           <li>MongoDB</li>
           <li>Node.js</li>
-          <li>Express</li>
         </ul>
+        <div className="text-center  place-items-center grid grid-flow-col grid-rows-1 gap-10">
+          <ul className="grid gap-5">
+            <h1 className="text-2xl">Languages</h1>
+            <li>Georgian</li>
+            <li>English</li>
+            <li>Russian</li>
+          </ul>
+          <ul className="grid gap-5">
+            <h1 className="text-2xl">soft skills</h1>
+            <li>Teamwork</li>
+            <li>Communication</li>
+            <li>Problem Solving</li>
+            <li>Analitics</li>
+          </ul>
+        </div>
       </div>
     </div>
   );
@@ -64,4 +78,4 @@ function imgUrls(i: number) {
   return urls[i % urls.length];
 }
 
-export default Experience;
+export default Skills;
