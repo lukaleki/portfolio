@@ -4,7 +4,7 @@ import me from "@/public/me.jpeg";
 
 function About() {
   return (
-    <div id="about" className="flex h-1/2 justify-between w-1/2">
+    <div id="about" className="flex h-1/2 items-center justify-between w-1/2">
       <div className="">
         <h1 className="text-4xl ">
           Hey 👋, <br /> I&apos;m

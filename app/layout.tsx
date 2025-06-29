@@ -31,6 +31,7 @@ export default function RootLayout({
       >
         <MouseFollower />
         <Nav />
+        <br />
         {children}
       </body>
     </html>
