@@ -13,12 +13,12 @@ const urls = [next, node, html, css, react, js];
 function Skills() {
   return (
     <div id="skills" className="w-full flex flex-col items-center">
-      <h1 className="text-4xl">My skills</h1>
+      <h1 className="xl:text-4xl">My skills</h1>
       <br />
-      <div className="w-full flex justify-evenly items-center lg:flex-col gap-5">
+      <div className="w-full flex justify-evenly items-center flex-col xl:gap-5">
         <div
           tabIndex={0}
-          className="relative h-[20vmin] w-[20vmin] aspect-[5/7] group"
+          className="relative xl:h-[20vmin] xl:w-[20vmin] aspect-[5/7] group"
         >
           {urls.map((url: StaticImageData, i: number) => (
             <div
@@ -50,7 +50,7 @@ function Skills() {
           </ul>
           <ul className="text-xl text-center flex">
             <div className="flex flex-col">
-              <li className="border-2 border-highliter p-5 text-2xl">
+              <li className="border-2 border-highliter p-5 xl:text-2xl">
                 Languages
               </li>
               <li className="border-2 border-highliter p-5">Georgian</li>
