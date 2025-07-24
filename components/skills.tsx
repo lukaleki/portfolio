@@ -7,82 +7,109 @@ import html from "@/public/html.png";
 import next from "@/public/nextjs.svg";
 import node from "@/public/nodejs.png";
 
-// hover image animation urls
-const urls = [next, node, html, css, react, js];
-
 function Skills() {
   return (
-    <div id="skills" className="w-full flex flex-col items-center">
-      <h1 className="xl:text-4xl">My skills</h1>
+    <div id="skills" className="w-full flex flex-col items-center px-4 py-10">
+      <h1 className="text-3xl xl:text-4xl font-semibold">My Skills</h1>
       <br />
-      <div className="w-full flex justify-evenly items-center flex-col xl:gap-5">
+      <div className="flex flex-col items-center justify-center xl:gap-10 w-full max-w-6xl">
+        {/* Animated Icons */}
         <div
           tabIndex={0}
-          className="relative xl:h-[20vmin] xl:w-[20vmin] aspect-[5/7] group"
+          className="relative h-[100px] w-[75px] sm:w-[150px] xl:h-[100px] xl:w-[100px] group"
         >
           {urls.map((url: StaticImageData, i: number) => (
             <div
               key={i}
-              className={`grid place-items-center absolute rounded-[1vmin] transition-transform duration-600 ease-in-out ${getHoverTransformClass(
-                i
-              )} z-[${i}]`}
+              className={`grid place-items-center absolute rounded-lg transition-transform duration-500 ease-in-out z-${
+                i + 10
+              } ${getHoverTransformClass(i)}`}
             >
               <Image
-                src={urls[i]}
-                width={200}
-                height={200}
-                alt="Luka Lekishvili"
+                src={url}
+                width={150}
+                height={150}
+                alt={`Skill logo ${url}`}
+                className="object-contain w-[80px] h-[80px] sm:w-[120px] sm:h-[120px] lg:w-[150px] lg:h-[150px]"
               />
             </div>
           ))}
         </div>
-        <div className="flex gap-3">
-          <ul className="text-xl text-center grid grid-cols-3">
-            <li className="border-2 border-highliter p-4">HTML</li>
-            <li className="border-2 border-highliter p-4">CSS</li>
-            <li className="border-2 border-highliter p-4">SCSS</li>
-            <li className="border-2 border-highliter p-4">JavaScript</li>
-            <li className="border-2 border-highliter p-4">React</li>
-            <li className="border-2 border-highliter p-4">React-Native</li>
-            <li className="border-2 border-highliter p-4">NextJS</li>
-            <li className="border-2 border-highliter p-4">MongoDB</li>
-            <li className="border-2 border-highliter p-4">Node.js</li>
+
+        {/* Skills List */}
+        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
+          {/* Technical Skills */}
+          <ul className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-center text-lg">
+            {[
+              "HTML",
+              "CSS",
+              "SCSS",
+              "JavaScript",
+              "React",
+              "React-Native",
+              "NextJS",
+              "MongoDB",
+              "Node.js",
+            ].map((skill) => (
+              <li
+                key={skill}
+                className="border-2 border-highliter p-3 rounded-md"
+              >
+                {skill}
+              </li>
+            ))}
           </ul>
-          <ul className="text-xl text-center flex">
-            <div className="flex flex-col">
-              <li className="border-2 border-highliter p-5 xl:text-2xl">
+
+          {/* Languages & Soft Skills */}
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <ul className="text-center text-lg space-y-2">
+              <li className="font-semibold border-2 border-highliter p-3 text-xl rounded-md">
                 Languages
               </li>
-              <li className="border-2 border-highliter p-5">Georgian</li>
-              <li className="border-2 border-highliter p-5">English</li>
-              <li className="border-2 border-highliter p-5">Russian</li>
-            </div>
-            <div className="flex flex-col">
-              <li className="border-2 border-highliter p-5 text-2xl">
+              <li className="border-2 border-highliter p-3 rounded-md">
+                Georgian
+              </li>
+              <li className="border-2 border-highliter p-3 rounded-md">
+                English
+              </li>
+              <li className="border-2 border-highliter p-3 rounded-md">
+                Russian
+              </li>
+            </ul>
+            <ul className="text-center text-lg space-y-2">
+              <li className="font-semibold border-2 border-highliter p-3 text-xl rounded-md">
                 Soft Skills
               </li>
-              <li className="border-2 border-highliter p-5">Teamwork</li>
-              <li className="border-2 border-highliter p-5">Communication</li>
-              <li className="border-2 border-highliter p-5">Problem Solving</li>
-            </div>
-          </ul>
+              <li className="border-2 border-highliter p-3 rounded-md">
+                Teamwork
+              </li>
+              <li className="border-2 border-highliter p-3 rounded-md">
+                Communication
+              </li>
+              <li className="border-2 border-highliter p-3 rounded-md">
+                Problem Solving
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   );
 }
 
-// hover image animation classes
+const urls = [next, node, html, css, react, js];
+
+// Animations on hover/focus
 function getHoverTransformClass(i: number): string {
-  const baseTransforms = [
-    "group-hover:translate-x-[275%] group-hover:-translate-y-[110%] group-hover:-rotate-[10deg] w-4/5 group-focus:translate-x-[275%] group-focus:-translate-y-[110%] group-focus:-rotate-[10deg]",
-    "group-hover:-translate-x-[115%] group-hover:-translate-y-[110%] group-hover:rotate-[10deg] w-4/5 group-focus:-translate-x-[115%] group-focus:-translate-y-[110%] group-focus:rotate-[10deg]",
-    "group-hover:-translate-x-[90%] group-hover:translate-y-[20%] group-hover:-rotate-[15deg] w-full group-focus:-translate-x-[90%] group-focus:translate-y-[20%] group-focus:-rotate-[15deg]",
-    "group-hover:-translate-x-[20%] group-hover:translate-y-[3%] group-hover:-rotate-[5deg] w-full group-focus:-translate-x-[20%] group-focus:translate-y-[3%] group-focus:-rotate-[5deg]",
-    "group-hover:translate-x-[65%] group-hover:rotate-[2deg] w-full group-focus:translate-x-[65%] group-focus:rotate-[2deg]",
-    "group-hover:translate-x-[170%] group-hover:translate-y-[5%] group-hover:rotate-[10deg] w-full group-focus:translate-x-[170%] group-focus:translate-y-[5%] group-focus:rotate-[10deg]",
+  const transforms = [
+    "group-hover:translate-x-[265%] group-hover:-translate-y-[110%] group-hover:-rotate-[10deg] group-focus:translate-x-[145%] group-focus:-translate-y-[110%] group-focus:-rotate-[10deg]",
+    "group-hover:-translate-x-[105%] group-hover:-translate-y-[110%] group-hover:rotate-[10deg] group-focus:-translate-x-[145%] group-focus:-translate-y-[110%] group-focus:rotate-[10deg]",
+    "group-hover:-translate-x-[80%] group-hover:translate-y-[20%] group-hover:-rotate-[15deg] group-focus:-translate-x-[140%] group-focus:translate-y-[20%] group-focus:-rotate-[15deg]",
+    "group-hover:-translate-x-[10%] group-hover:translate-y-[3%] group-hover:-rotate-[5deg] group-focus:-translate-x-[60%] group-focus:translate-y-[3%] group-focus:-rotate-[5deg]",
+    "group-hover:translate-x-[55%] group-hover:rotate-[2deg] group-focus:translate-x-[30%] group-focus:rotate-[2deg]",
+    "group-hover:translate-x-[160%] group-hover:translate-y-[5%] group-hover:rotate-[10deg] group-focus:translate-x-[140%] group-focus:translate-y-[5%] group-focus:rotate-[10deg]",
   ];
-  return baseTransforms[i % baseTransforms.length];
+  return transforms[i % transforms.length];
 }
 
 export default Skills;
